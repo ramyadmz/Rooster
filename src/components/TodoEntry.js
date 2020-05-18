@@ -20,6 +20,7 @@ class TodoEnrty extends Component {
   render() {
     return (
       <header className="header">
+        <img src="./images/logo.jpg"/>
         <h1>todo</h1>
         <input
           value={this.state.value}
