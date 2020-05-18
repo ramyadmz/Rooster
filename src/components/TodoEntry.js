@@ -20,8 +20,10 @@ class TodoEnrty extends Component {
   render() {
     return (
       <header className="header">
-        <img src="images/logo.jpg"/>
-        <h1>todo</h1>
+        
+        <div className="logo"><img src="images/logo.jpg"/></div>
+        <div className="headerTitle"><h1>todo</h1></div>
+        
         <input
           value={this.state.value}
           onChange={(event) => this.setState({ value: event.target.value })}
