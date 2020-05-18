@@ -1,16 +1,18 @@
-import {observable,action} from "mobx"
-import TodoModel from "./TodoModel"
+import { observable, action } from "mobx";
+import TodoModel from "./TodoModel";
 
-class TodoStore{
-    lastID = 0
-    @observable todos = []
-    @action addTodo(title){
-        this.todos.push(new TodoModel(this, this.lastID++ ,title,false) )
+class TodoStore {
+  lastID = 0;
+  @observable countText=" "
+  @observable todos = [];
 
-    }
-    @action fire(id){
-        this.todos= this.todos.filter(todo=> todo.id !== id)
-    }
+  @action addTodo(title) {
+    this.todos.push(new TodoModel(this, this.lastID++, title, false, true));
+  }
+  @action fire(id) {
+    this.todos = this.todos.filter((todo) => todo.id !== id);
+  }
+  
 }
-const store = new TodoStore()
-export default store
+const store = new TodoStore();
+export default store;

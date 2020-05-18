@@ -7,13 +7,16 @@ import { observer } from "mobx-react";
 class TodoItems extends Component {
   render() {
     return (
-      <div className="main">
-        <ul className="todo-list">
-          {TodoStore.todos.map((todo) => {
-            return <TodoItem todo={todo} />;
-          })}
-
-        </ul>
+      <div>
+        <div className="main">
+          <ul className="todo-list">
+            {TodoStore.todos
+              .filter((item) => item.visibility === true)
+              .map((todo) => {
+                return <TodoItem todo={todo} />;
+              })}
+          </ul>
+        </div>
       </div>
     );
   }

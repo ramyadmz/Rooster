@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import TodoStore from "../stores/TodoStore";
+
+
 class TodoEnrty extends Component {
   state = {
     value: "",
@@ -13,6 +15,7 @@ class TodoEnrty extends Component {
     this.setState({
       value: "",
     });
+    
   };
   render() {
     return (

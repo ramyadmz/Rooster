@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import TodoEntry from "./components/TodoEntry"
 import TodoItems from "./components/TodoItems"
+import ManagementBar from "./components/ManagementBar"
 
 
 class App extends Component {
@@ -10,6 +11,7 @@ class App extends Component {
       <div id="todoapp" className="todoapp">
         <TodoEntry />
         <TodoItems />
+        <ManagementBar/>
        
       </div>
     );

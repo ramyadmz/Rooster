@@ -2,17 +2,16 @@ import React, { Component } from "react";
 import { observer } from "mobx-react";
 import TodoStore from "../stores/TodoStore";
 
-
-
 @observer
 class TodoItem extends Component {
-  onToggle=()=> {
+  onToggle = () => {
     this.props.todo.toggle();
-  }
-  onFire=()=>{
-    TodoStore.fire(this.props.todo.id)
-
-  }
+   
+  };
+  onFire = () => {
+    TodoStore.fire(this.props.todo.id);
+   
+  };
 
   render() {
     const { todo } = this.props;

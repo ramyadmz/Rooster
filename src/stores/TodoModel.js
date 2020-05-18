@@ -5,11 +5,13 @@ export default class TodoModel {
     id
     @observable title
     @observable completed
-    constructor(store, id ,title,completed){
-        this.store=store,
-        this.id=id,
-        this.title=title,
-        this.completed=completed
+    @observable visibility
+    constructor(store, id ,title,completed,visibility){
+        this.store = store,
+        this.id = id,
+        this.title = title,
+        this.completed = completed,
+        this.visibility = visibility;
 
     }
     @action toggle(){
