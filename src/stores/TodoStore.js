@@ -3,6 +3,7 @@ import TodoModel from "./TodoModel";
 
 class TodoStore {
   lastID = 0;
+  @observable lastFilter ="all"
   @observable countText=" "
   @observable todos = [];
 

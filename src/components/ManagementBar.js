@@ -9,16 +9,20 @@ class ManagementBar extends Component {
     for (var i = 0; i < TodoStore.todos.length; i++) {
       TodoStore.todos[i].visibility = true;
     }
-  };
-  showCompleted = () => {
-    for (var i = 0; i < TodoStore.todos.length; i++) {
-      TodoStore.todos[i].visibility = TodoStore.todos[i].completed;
-    }
+    TodoStore.lastFilter="all"
   };
   showUncompleted = () => {
     for (var i = 0; i < TodoStore.todos.length; i++) {
       TodoStore.todos[i].visibility = !TodoStore.todos[i].completed;
     }
+    TodoStore.lastFilter="active"
+  };
+  showCompleted = () => {
+    for (var i = 0; i < TodoStore.todos.length; i++) {
+      TodoStore.todos[i].visibility = TodoStore.todos[i].completed;
+
+    }
+    TodoStore.lastFilter="completed"
   };
 
   ClearCompleted = () => {
@@ -38,13 +42,13 @@ class ManagementBar extends Component {
         </span>
         <ul className="filters">
           <li>
-            <a onClick={this.showAll}>all</a>
+            <a className={TodoStore.lastFilter === "all" ? "selected" : ""} onClick={this.showAll}>all</a>
           </li>
           <li>
-            <a onClick={this.showUncompleted}>active</a>
+            <a className={TodoStore.lastFilter === "active" ? "selected" : ""} onClick={this.showUncompleted}>active</a>
           </li>
           <li>
-            <a onClick={this.showCompleted}>completed</a>
+            <a className={TodoStore.lastFilter === "completed" ? "selected" : ""} onClick={this.showCompleted}>completed</a>
           </li>
         </ul>
         <button onClick={this.ClearCompleted} className="clear-completed" >

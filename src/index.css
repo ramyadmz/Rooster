@@ -270,7 +270,7 @@ border-radius: 5px;
   padding: 10px 15px;
   height: 20px;
   text-align: center;
-  font-size: 15px;
+  font-size: 13px;
   border-top: 1px solid #e6e6e6;
 }
 .hidden-footer{
@@ -322,13 +322,14 @@ border-radius: 5px;
   border-radius: 3px;
 }
 
-.filters li a:hover {
+.filters li a:hover  {
   border-color: rgba(175, 47, 47, 0.1);
   color: #b83f45
 }
 
 .filters li a.selected {
   border-color: rgba(175, 47, 47, 0.2);
+  color: #b83f45
 }
 
 .clear-completed,

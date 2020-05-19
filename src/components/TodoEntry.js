@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import TodoStore from "../stores/TodoStore";
 
-
 class TodoEnrty extends Component {
   state = {
     value: "",
