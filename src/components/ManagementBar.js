@@ -31,7 +31,7 @@ class ManagementBar extends Component {
 
   render() {    
     return (
-      <div className="footer">
+      <div className={(TodoStore.todos.length) > 0 ? "footer" : "hidden-footer" } >
         <span className="todo-count"> {(TodoStore.todos.filter((item) => item.completed === false).length) > 1 ?
          `${TodoStore.todos.filter((item) => item.completed === false).length} items left` : 
          `${TodoStore.todos.filter((item) => item.completed === false).length} item left`}
@@ -47,8 +47,8 @@ class ManagementBar extends Component {
             <a onClick={this.showCompleted}>completed</a>
           </li>
         </ul>
-        <button onClick={this.ClearCompleted} className="clear-completed">
-          clear completed
+        <button onClick={this.ClearCompleted} className="clear-completed" >
+        {(TodoStore.todos.filter((item) => item.completed === true).length) > 0 ? "clear completed" : " " }
         </button>
       </div>
     );
