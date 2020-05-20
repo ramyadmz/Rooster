@@ -6,6 +6,13 @@ import TodoStore from "../stores/TodoStore";
 class TodoItem extends Component {
   onToggle = () => {
     this.props.todo.toggle();
+    if(TodoStore.lastFilter==="completed")
+    {    this.props.todo.visibility = this.props.todo.completed; }
+    if(TodoStore.lastFilter==="active")
+    {    this.props.todo.visibility = !this.props.todo.completed; }
+    if(TodoStore.lastFilter==="all")
+    {    this.props.todo.visibility = true }
+
    
   };
   onFire = () => {

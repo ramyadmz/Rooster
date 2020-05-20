@@ -30,6 +30,7 @@ class TodoEnrty extends Component {
           type="text"
           className="new-todo"
           placeholder="what needs to be done?"
+          tabIndex="0"
         />
       </header>
     );
